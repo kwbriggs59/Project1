@@ -21,9 +21,10 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', 'kwbriggs-dockerhub' ) 
+          docker.withRegistry( 'https://registry.hub.docker.com', 'kwbriggs-dockerhub' ) {
           dockerImage.push("$BUILD_NUMBER")
           dockerImage.push('latest')
+          }
         }
       }
     }
