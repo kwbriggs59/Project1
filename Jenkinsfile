@@ -20,11 +20,9 @@ pipeline {
     }
     stage('Deploy Image') {
       steps{
-        script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) 
+          docker.withRegistry( 'https://registry.hub.docker.com', 'kwbriggs-dockerhub' ) 
           dockerImage.push("$BUILD_NUMBER")
           dockerImage.push('latest')
-        }
       }
     }
     stage('Remove Unused docker image') {
