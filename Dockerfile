@@ -26,4 +26,5 @@ RUN mkdir /app
 # RUN cd /myapp
 RUN wget https://raw.githubusercontent.com/kwbriggs59/Project1/main/app/HelloJava.java 
 RUN mv HelloJava.java /app/
+
 RUN javac /app/HelloJava.java
