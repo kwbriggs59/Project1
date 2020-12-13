@@ -1,7 +1,7 @@
 pipeline {
   environment {
     imagename = "kwbriggs/project1"
-    registryCredential = 'kwbriggs-docker-hub-oauth-token'
+    registryCredential = 'kwbriggs-dockerhub-access-token'
     dockerImage = ''
   }
   agent any
