@@ -7,10 +7,7 @@ pipeline {
   agent any
   stages {
     stage('Cloning Git') {
-      steps {
-        git([url: 'https://github.com/kwbriggs59/Project1.git', branch: 'master', credentialsId: 'kwbriggs59-github'])
-
-      }
+      checkout scm
     }
     stage('Building image') {
       steps{
